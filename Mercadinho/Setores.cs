@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mercadinho
 {
-    public class Produtos
+    public class Setores
     {
-        public int Id { get; set; }
-        public string Descricao { get; set; }
-        public string Un{ get; set; }
-        public decimal Valor { get; set; }
-
         public int IdSetor { get; set; }
+        public string Descricao { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace Mercadinho
             Property(x => x.Un).IsRequired().HasColumnType
                 ("varchar").HasMaxLength(3);
             Property(x => x.Valor).HasColumnType("decimal").HasPrecision(10, 2);
+            Property(x => x.IdSetor).HasColumnType("int");
         }
     }
 }
