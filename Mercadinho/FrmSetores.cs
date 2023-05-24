@@ -30,11 +30,11 @@ namespace Mercadinho
             dataGridView1.DefaultCellStyle.Font = new Font("Arial", 9);
             
 
-            dataGridView1.Columns["idSetor"].HeaderText = "Id";
+            dataGridView1.Columns["idSetor"].HeaderText = "Id do Setor";
             dataGridView1.Columns["idSetor"].Width = 80;
             dataGridView1.Columns["idSetor"].HeaderCell.Style.Alignment = 
                 DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns["idSetor"].HeaderCellStyle.Alignment =
+            dataGridView1.Columns["idSetor"].DefaultCellStyle.Alignment =
                 DataGridViewContentAlignment.MiddleCenter;
 
             dataGridView1.Columns["descricao"].HeaderText = "Descrição";
