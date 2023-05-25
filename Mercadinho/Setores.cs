@@ -10,5 +10,7 @@ namespace Mercadinho
     {
         public int IdSetor { get; set; }
         public string Descricao { get; set; }
+
+        public virtual ICollection<Produtos> Produtos { get; set; }
     }
 }

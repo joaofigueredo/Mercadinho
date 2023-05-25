@@ -14,5 +14,7 @@ namespace Mercadinho
         public decimal Valor { get; set; }
 
         public int IdSetor { get; set; }
+
+        public virtual Setores Setor { get; set; }
     }
 }

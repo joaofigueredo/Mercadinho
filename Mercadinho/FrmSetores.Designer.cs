@@ -70,6 +70,7 @@
             AdicionarToolStripButton.Name = "AdicionarToolStripButton";
             AdicionarToolStripButton.Size = new Size(97, 24);
             AdicionarToolStripButton.Text = "Adicionar";
+            AdicionarToolStripButton.Click += AdicionarToolStripButton_Click;
             // 
             // toolStripSeparator1
             // 
@@ -83,6 +84,7 @@
             AlterarToolStripButton.Name = "AlterarToolStripButton";
             AlterarToolStripButton.Size = new Size(78, 24);
             AlterarToolStripButton.Text = "Alterar";
+            AlterarToolStripButton.Click += AlterarToolStripButton_Click;
             // 
             // toolStripSeparator2
             // 
@@ -96,6 +98,7 @@
             VisualizarToolStripButton.Name = "VisualizarToolStripButton";
             VisualizarToolStripButton.Size = new Size(96, 24);
             VisualizarToolStripButton.Text = "Visualizar";
+            VisualizarToolStripButton.Click += VisualizarToolStripButton_Click;
             // 
             // toolStripSeparator3
             // 
@@ -109,6 +112,7 @@
             ExcluirToolStripButton.Name = "ExcluirToolStripButton";
             ExcluirToolStripButton.Size = new Size(76, 24);
             ExcluirToolStripButton.Text = "Excluir";
+            ExcluirToolStripButton.Click += ExcluirToolStripButton_Click;
             // 
             // FrmSetores
             // 

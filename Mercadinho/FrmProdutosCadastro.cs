@@ -20,7 +20,7 @@ namespace Mercadinho
 
             if (id != 0)
             {
-                Obterproduto(id);
+                ObterProduto(id);
             }
 
             //visualizar
@@ -70,7 +70,7 @@ namespace Mercadinho
             }
         }
 
-        private void Obterproduto(int id)
+        private void ObterProduto(int id)
         {
             //Colocando o id no textBox
             txtId.Text = id.ToString();
@@ -93,7 +93,7 @@ namespace Mercadinho
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao salvar.\n" + ex.Message);
+                MessageBox.Show("Falha ao buscar o produto.\n" + ex.Message);
             }
         }
 
