@@ -67,7 +67,6 @@ namespace Mercadinho
                 MessageBox.Show("Falha ao buscar o setor.\n" + ex.Message);
             }
         }
-
         private void SalvarToolStripButton1_Click(object sender, EventArgs e)
         {
             if (Salvar())
@@ -75,7 +74,6 @@ namespace Mercadinho
                 Close();
             }
         }
-
         private bool Salvar()
         {
             var setor = new Setores();

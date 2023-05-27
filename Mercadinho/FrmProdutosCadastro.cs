@@ -48,27 +48,29 @@ namespace Mercadinho
             cmbSetores.Enabled = false;
         }
 
-        private void PopularSetores()
-        {
-            try
+            private void PopularSetores()
             {
-                using (var context = new DataContext())
+                try
                 {
-                    //lista com os setores do banco
-                    var listaSetores = from setores in context.Setores
-                                       select setores;
+                    using (var context = new DataContext())
+                    {
+                        //lista com os setores do banco
+                        var listaSetores = from setores in context.Setores
+                                           select setores;
 
-                    //Utiliza o idSetor para encontrar e mostra a descrição do setor
-                    cmbSetores.DataSource = listaSetores.ToList();
-                    cmbSetores.DisplayMember = "Descricao";
-                    cmbSetores.ValueMember = "IdSetor";
+                        //Utiliza o idSetor para encontrar e mostra a descrição do setor
+                        cmbSetores.DataSource = listaSetores.ToList();
+                        cmbSetores.DisplayMember = "Descricao";
+                        cmbSetores.ValueMember = "IdSetor";
+                        //Deixar a aba de setores em branco
+                        cmbSetores.SelectedIndex = -1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Falha ao buscar setores.\n" + ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha ao buscar setores.\n" + ex.Message);
-            }
-        }
 
         private void ObterProduto(int id)
         {
@@ -161,28 +163,39 @@ namespace Mercadinho
 
         private bool Excluir()
         {
-            try{
-                using(var context = new DataContext())
+            try
+            {
+                using (var context = new DataContext())
                 {
                     var produto = new Produtos();
 
                     produto.Id = Convert.ToInt32(txtId.Text);
                     var entry = context.Entry(produto);
 
-                    if(entry.State == System.Data.Entity.EntityState.Detached)
+                    if (entry.State == System.Data.Entity.EntityState.Detached)
                     {
                         context.Produtos.Attach(produto);
                     }
                     context.Produtos.Remove(produto);
                     context.SaveChanges();
-                    return true; 
+                    return true;
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Falha ao excluir" + ex.Message);
                 return false;
             }
 
+        }
+
+        private void cmbSetores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
         }
     }
 }

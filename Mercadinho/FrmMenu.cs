@@ -24,5 +24,13 @@ namespace Mercadinho
                 frm.ShowDialog();
             }
         }
+
+        private void btnGerarRelatorio_Click(object sender, EventArgs e)
+        {
+            using (var frm = new FrmProdutosRelatorio())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

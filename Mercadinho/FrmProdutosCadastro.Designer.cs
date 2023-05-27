@@ -97,6 +97,7 @@
             label5.Size = new Size(50, 23);
             label5.TabIndex = 4;
             label5.Text = "Setor";
+            label5.Click += label5_Click;
             // 
             // txtId
             // 
@@ -147,6 +148,7 @@
             cmbSetores.Name = "cmbSetores";
             cmbSetores.Size = new Size(151, 28);
             cmbSetores.TabIndex = 8;
+            cmbSetores.SelectedIndexChanged += cmbSetores_SelectedIndexChanged;
             // 
             // toolStrip1
             // 

@@ -30,6 +30,7 @@
         {
             btnSetores = new Button();
             btnProdutos = new Button();
+            btnGerarRelatorio = new Button();
             SuspendLayout();
             // 
             // btnSetores
@@ -54,11 +55,23 @@
             btnProdutos.UseVisualStyleBackColor = true;
             btnProdutos.Click += btnProdutos_Click;
             // 
+            // btnGerarRelatorio
+            // 
+            btnGerarRelatorio.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGerarRelatorio.Location = new Point(240, 267);
+            btnGerarRelatorio.Name = "btnGerarRelatorio";
+            btnGerarRelatorio.Size = new Size(212, 29);
+            btnGerarRelatorio.TabIndex = 2;
+            btnGerarRelatorio.Text = "Gerar relatório";
+            btnGerarRelatorio.UseVisualStyleBackColor = true;
+            btnGerarRelatorio.Click += btnGerarRelatorio_Click;
+            // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnGerarRelatorio);
             Controls.Add(btnProdutos);
             Controls.Add(btnSetores);
             Name = "FrmMenu";
@@ -70,5 +83,6 @@
 
         private Button btnSetores;
         private Button btnProdutos;
+        private Button btnGerarRelatorio;
     }
 }
