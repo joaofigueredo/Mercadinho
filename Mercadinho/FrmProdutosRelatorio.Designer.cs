@@ -42,6 +42,7 @@
             btnGerarRelatorio.TabIndex = 3;
             btnGerarRelatorio.Text = "Gerar relatório";
             btnGerarRelatorio.UseVisualStyleBackColor = true;
+            btnGerarRelatorio.Click += btnGerarRelatorio_Click;
             // 
             // cmbSetores
             // 

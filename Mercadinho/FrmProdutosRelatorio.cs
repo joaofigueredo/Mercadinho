@@ -62,5 +62,41 @@ namespace Mercadinho
             this.Refresh();
             PopularSetores();
         }
+
+        private void btnGerarRelatorio_Click(object sender, EventArgs e)
+        {
+            GerarRelatorio();
+        }
+
+        private void GerarRelatorio()
+        {
+            int setor = (int)cmbSetores.SelectedValue;
+            var listaProdutos = new List<Produtos>();
+
+            using (var context = new DataContext())
+            {
+                var lista = from produtos in context.Produtos
+                            join setores in context.Setores
+                            on produtos.IdSetor equals setores.IdSetor
+                            into produtosGrupo
+                            from setores in produtosGrupo.DefaultIfEmpty()
+                            select new { setores, produtos };
+
+                foreach(var item in lista)
+                {
+                    listaProdutos.Add(new Produtos(
+                        item.produtos.Id,
+                        item.produtos.Descricao,
+                        item.produtos.Un,
+                        item.produtos.Valor,
+                        item.setores.IdSetor,
+                        item.setores.Descricao)
+                        );
+                }
+            }
+
+            ProdutosRelatorio.GerarRelatorio(@"C:\Dados", listaProdutos, setor);
+            MessageBox.Show("Gerado");
+        }
     }
 }

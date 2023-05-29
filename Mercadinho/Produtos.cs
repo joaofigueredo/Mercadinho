@@ -16,5 +16,26 @@ namespace Mercadinho
         public int IdSetor { get; set; }
 
         public virtual Setores Setor { get; set; }
+
+        public Produtos(int id, string descricao, string un, decimal valor, int idSetor, string setorDescricao)
+        {
+            Id = id;
+            Descricao = descricao;
+            Un = un;
+            Valor = valor;
+            IdSetor = idSetor;
+
+            var setor = new Setores();
+            setor.IdSetor = idSetor;
+            setor.Descricao = setorDescricao;
+
+            Setor = setor;
+
+
+        }
+
+        public Produtos()
+        {
+        }
     }
 }
