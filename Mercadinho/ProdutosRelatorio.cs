@@ -132,7 +132,7 @@ namespace Mercadinho
                 .SetFont(fonte)
                 .SetFontSize(13)
                 .SetFontColor(ColorConstants.BLACK)
-                .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                .SetBackgroundColor(ColorConstants.WHITE)
                 .SetPaddingLeft(10)
                 .SetPaddingTop(10)
                 .SetBorder(Border.NO_BORDER)

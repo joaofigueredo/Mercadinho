@@ -36,12 +36,7 @@ namespace Mercadinho
 
                     var lista = listaSetores.ToList();
                     //Inserir todos os setores (Prepend adiciona no inicio da lista)
-                    lista = lista.Prepend(new Setores()
-                    {
-                        IdSetor = 0,
-                        Descricao = "Todos os setores",
-                        Produtos = null
-                    }).ToList();
+                    lista = lista.Prepend(new Setores(){ IdSetor = 0, Descricao = "Todos os setores", Produtos = null }).ToList();
 
                     //Utiliza o idSetor para encontrar e mostra a descrição do setor
                     cmbSetores.DataSource = lista;
@@ -95,7 +90,7 @@ namespace Mercadinho
                 }
             }
 
-            ProdutosRelatorio.GerarRelatorio(@"C:\Dados", listaProdutos, setor);
+            ProdutosRelatorio.GerarRelatorio(@"C:\Dados\produtos.pdf", listaProdutos, setor);
             MessageBox.Show("Gerado");
         }
     }
